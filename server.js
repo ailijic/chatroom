@@ -15,7 +15,6 @@ function start () {
   const io = socket_io(server)
   io.on('connection', (socket) => {
     console.log('Client connected')
-    // console.log(socket)
     const numUsers = socket.server.eio.clientsCount
     socket.broadcast.emit('message',
         `Client connected, #Users: ${numUsers}`)
